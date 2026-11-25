@@ -113,7 +113,7 @@ int main()
                             }
 
                         // TRY AGAIN QUESTION
-                        printf("\nDo you want to use Right Triangle Calculator again? (Y/N): ");
+                        printf("\nDo you want to use Right Triangle again? (Y/N): ");
                         scanf(" %c", &tryAgain);
                         printf("\n");
 
@@ -162,7 +162,7 @@ int main()
                             }
 
                         // TRY AGAIN QUESTION
-                        printf("\nDo you want to use Square Calculator again? (Y/N): ");
+                        printf("\nDo you want to use Square again? (Y/N): ");
                         scanf(" %c", &tryAgain);
                         printf("\n");
 
@@ -214,7 +214,7 @@ int main()
                             }
 
                         // TRY AGAIN QUESTION
-                        printf("\nDo you want to use Isosceles Triangle Calculator again? (Y/N): ");
+                        printf("\nDo you want to use Isosceles Triangle again? (Y/N): ");
                         scanf(" %c", &tryAgain);
                         printf("\n");
                         } while (tryAgain == 'y' || tryAgain == 'Y');
@@ -260,7 +260,7 @@ int main()
                             }
 
                         // TRY AGAIN QUESTION
-                        printf("\nDo you want to use Inverted Triangle Calculator again? (Y/N): ");
+                        printf("\nDo you want to use Inverted Triangle again? (Y/N): ");
                         scanf(" %c", &tryAgain);
                         printf("\n");
                         } while (tryAgain == 'y' || tryAgain == 'Y');
