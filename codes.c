@@ -534,75 +534,94 @@ int main()
         // PALINDROME CHECKER
         else if (choice == 4)
         {
-            printf("┌──────────────────────┐\n");
-            printf("   PALINDROME CHECKER    \n");
-            printf("└──────────────────────┘\n\n");
+            do {
+                printf("┌──────────────────────┐\n");
+                printf("   PALINDROME CHECKER    \n");
+                printf("└──────────────────────┘\n\n");
 
-            char word[100];
-            char clean[100];
-            int length, i, j = 0;
-            int isPalindrome = 1;
-            int hasInvalid = 0;
+                char word[100];
+                char clean[100];
+                char flipped[100];
+                int length, i, j = 0;
+                int isPalindrome = 1;
+                int hasInvalid = 0;
 
-            printf("► Enter a single word: ");
-            scanf("%99s", word);
-            printf("\n");
+                printf("► Enter a single word: ");
+                scanf("%99s", word);
+                printf("\n");
 
-            if (getchar() != '\n')
-            {
-                while (getchar() != '\n'); 
-                printf(">> Error: Please enter a SINGLE word only (no spaces). <<\n");
-            }
-            else
-            {
-                length = strlen(word);
-
-                for (i = 0; i < length; i++)
+                if (getchar() != '\n')
                 {
-                    if (word[i] >= 'A' && word[i] <= 'Z')
-                    {
-                        clean[j] = word[i] + 32;
-                        j++;
-                    }
-                    else if (word[i] >= 'a' && word[i] <= 'z')
-                    {
-                        clean[j] = word[i];
-                        j++;
-                    }
-                    else
-                    {
-                        hasInvalid = 1;
-                        break;
-                    }
-                }
-                clean[j] = '\0';
-
-                if (hasInvalid == 1)
-                {
-                    printf(">> Error: Input must contain letters only (no numbers or symbols). <<\n");
-                }
-                else if (j < 2)
-                {
-                    printf(">> Error: Please enter at least 2 letters. <<\n");
+                    while (getchar() != '\n'); 
+                    printf(">> Error: Please enter a SINGLE word only (no spaces). <<\n");
                 }
                 else
                 {
-                    for (i = 0; i < j / 2; i++)
+                    length = strlen(word);
+
+                    for (i = 0; i < length; i++)
                     {
-                        if (clean[i] != clean[j - 1 - i])
+                        if (word[i] >= 'A' && word[i] <= 'Z')
                         {
-                            isPalindrome = 0;
+                            clean[j] = word[i] + 32;
+                            j++;
+                        }
+                        else if (word[i] >= 'a' && word[i] <= 'z')
+                        {
+                            clean[j] = word[i];
+                            j++;
+                        }
+                        else
+                        {
+                            hasInvalid = 1;
                             break;
                         }
                     }
+                    clean[j] = '\0';
 
-                    if (isPalindrome == 1) {
-                        printf(">> \"%s\" is a PALINDROME! <<\n", word);
-                    } else {
-                        printf(">> \"%s\" is NOT a palindrome. <<\n", word);
+                    if (hasInvalid == 1)
+                    {
+                        printf(">> Error: Input must contain letters only (no numbers or symbols). <<\n");
+                    }
+                    else if (j < 2)
+                    {
+                        printf(">> Error: Please enter at least 2 letters. <<\n");
+                    }
+                    else
+                    {
+                        for (i = 0; i < length; i++) {
+
+                            flipped[i] = word[length - 1 - i];
+
+                        }
+
+                        flipped[length] = '\0';
+
+                        for (i = 0; i < j / 2; i++) {
+
+                            if (clean[i] != clean[j - 1 - i])
+                            {
+                                isPalindrome = 0;
+                                break;
+                            }
+
+                        }
+
+                        printf(">> Flipped word: \"%s\" <<\n\n", flipped);
+
+                        if (isPalindrome == 1) {
+                            printf(">> \"%s\" is a PALINDROME! <<\n", word);
+                        } else {
+                            printf(">> \"%s\" is NOT a palindrome. <<\n", word);
+                        }
                     }
                 }
-            }
+                // TRY AGAIN QUESTION
+                printf("\nDo you want to use Palindrome Checker again? (Y/N): ");
+                scanf(" %c", &tryAgain);
+                printf("\n");
+                
+            } while (tryAgain == 'y' || tryAgain == 'Y');
         }
         else if (choice == 5) 
         {
